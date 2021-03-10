@@ -1,0 +1,10 @@
+# Compose template version 3.9
+version: "3"
+services:
+  # The web service uses an image that’s built from the Dockerfile in the current directory
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"

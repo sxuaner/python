@@ -1,0 +1,38 @@
+---------------------------- Python and PIP installation ----------------------------
+
+# to unisntall pip
+$sudo pip uninstall pip
+
+# To install pip
+python<version> -m pip install <module-name>
+
+#redis-py can be installed using pip similar to other Python packages. Do not use sudo with pip. 
+#It is usually good to work in a virtualenv or venv to avoid conflicts with other package managers and Python projects. 
+#For a quick introduction see Python Virtual Environments in Five Minutes.
+
+# to install dependencies from a file:
+pip install -r requirements.txt
+
+# to show information of currently used module from the project
+pip show flask
+
+----------------------------- Virtualenv ----------------------------
+# for creating virtual envirionment, visit : https://flask.palletsprojects.com/en/1.1.x/installation/
+
+$ python3 -m venv venv
+$ py -3 -m venv <name of the virtual envirionment>
+
+# to activate the venv
+$ . venv/bin/activate
+
+# how to switch back to global envirionment
+$deactivate    # global command
+
+----------------------------- QA ----------------------------
+# why there is a import resolution error?
+it probably just means the python your editor is using is not the same interpreter that you're running when you run the server.
+# Option1: after switch back to global envirionment and install redis, the error is gone
+# Option2: in user setting, modify value of "python env file" to `${workspaceFolder}/venv` and select interpreter in ./venv/bin/python. 
+# Now the interpreter in virtual envirionment has been chosen.
+ 
+

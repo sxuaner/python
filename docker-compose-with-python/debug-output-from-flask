@@ -1,0 +1,126 @@
+Error: Got unexpected extra argument (app.py)
+(venv) ________________________________________________________________________________
+| xuansong:~/projects/python/docker-compose-with-python$ 
+| => flask run
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2021-03-10 18:12:50,516] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 585, in _connect
+    socket.SOCK_STREAM):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 26, in hello
+    count = get_hit_count()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 20, in get_hit_count
+    raise exc
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 17, in get_hit_count
+    return cache.incr('hits')
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 1641, in incr
+    return self.incrby(name, amount)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 1650, in incrby
+    return self.execute_command('INCRBY', name, amount)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+127.0.0.1 - - [10/Mar/2021 18:12:50] "GET / HTTP/1.1" 500 -
+127.0.0.1 - - [10/Mar/2021 18:12:50] "GET /favicon.ico HTTP/1.1" 404 -
+^C(venv) ________________________________________________________________________________
+| xuansong:~/projects/python/docker-compose-with-python$ 
+| => brew install redis
+Warning: Treating redis as a formula. For the cask, use homebrew/cask/redis
+Warning: You are using macOS 10.13.
+We (and Apple) do not provide support for this old version.
+You will encounter build failures with some formulae.
+Please create pull requests instead of asking for help on Homebrew's GitHub,
+Twitter or any other official channels. You are responsible for resolving
+any issues you experience while you are running this
+old version.
+
+Error: redis: no bottle available!
+You can try to install from source with:
+  brew install --build-from-source redis
+Please note building from source is unsupported. You will encounter build
+failures with some formulae. If you experience any issues please create pull
+requests instead of asking for help on Homebrew's GitHub, Twitter or any other
+official channels.
+(venv) ________________________________________________________________________________
+| xuansong:~/projects/python/docker-compose-with-python$ 
+| => ls
+__pycache__      app.py           requitements.txt venv
+(venv) ________________________________________________________________________________
+| xuansong:~/projects/python/docker-compose-with-python$ 
+| => touch debug
+(venv) ________________________________________________________________________________
+| xuansong:~/projects/python/docker-compose-with-python$ 
+| => flask run > debug 
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2021-03-10 18:15:02,104] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 585, in _connect
+    socket.SOCK_STREAM):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 26, in hello
+    count = get_hit_count()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 20, in get_hit_count
+    raise exc
+  File "/Users/xuansong/projects/python/docker-compose-with-python/app.py", line 17, in get_hit_count
+    return cache.incr('hits')
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 1641, in incr
+    return self.incrby(name, amount)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 1650, in incrby
+    return self.execute_command('INCRBY', name, amount)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/Users/xuansong/projects/python/docker-compose-with-python/venv/lib/python3.7/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+127.0.0.1 - - [10/Mar/2021 18:15:02] "GET / HTTP/1.1" 500 -

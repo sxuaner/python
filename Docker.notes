@@ -1,0 +1,2 @@
+# To run docker compose in current folder with docker-compose.yaml file
+$docker-compose up
