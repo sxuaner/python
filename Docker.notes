@@ -1,2 +1,24 @@
 # To run docker compose in current folder with docker-compose.yaml file
 $docker-compose up
+
+# to install bash to python:alphine image, add line to dockerfile 
+RUN /bin/sh -c "apk add --no-cache bash"
+
+# python:alphine has /bin/sh by default. there is no need to install bash extra for viewing purpose. 
+docker exec -it <container name> "/bin/sh"
+
+# force rebuild of all containers 
+docker-compose up --build --force-recreate
+
+# If you want to run your services in the background, you can pass the -d flag (for “detached” mode) to docker-compose up and use docker-compose ps to see what is currently running
+$ docker-compose up -d
+# If you started Compose with docker-compose up -d, stop your services once you’ve finished with them
+$ docker-compose stop
+
+
+---------------------------- Docker Compose ----------------------------
+
+// Commands you use with run start in new containers with configuration defined by that of the service, including volumes, links, 
+// and other details. However, there are two important differences. First, the command passed by run overrides the command defined in the service configuration.
+# docker-compose run : Runs a one-time command against a service. For example, the following command starts the web service and runs bash as its command.
+$ docker-compose run web bash

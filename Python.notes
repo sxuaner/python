@@ -1,3 +1,7 @@
+---------------------------- Formatting rules ----------------------------
+Commands
+// introduction or description, explanation
+# short text of what a command does
 ---------------------------- Python and PIP installation ----------------------------
 
 # to unisntall pip
@@ -6,9 +10,9 @@ $sudo pip uninstall pip
 # To install pip
 python<version> -m pip install <module-name>
 
-#redis-py can be installed using pip similar to other Python packages. Do not use sudo with pip. 
-#It is usually good to work in a virtualenv or venv to avoid conflicts with other package managers and Python projects. 
-#For a quick introduction see Python Virtual Environments in Five Minutes.
+//redis-py can be installed using pip similar to other Python packages. Do not use sudo with pip. 
+// It is usually good to work in a virtualenv or venv to avoid conflicts with other package managers and Python projects. 
+// For a quick introduction see Python Virtual Environments in Five Minutes.
 
 # to install dependencies from a file:
 pip install -r requirements.txt
@@ -16,9 +20,14 @@ pip install -r requirements.txt
 # to show information of currently used module from the project
 pip show flask
 
------------------------------ Virtualenv ----------------------------
-# for creating virtual envirionment, visit : https://flask.palletsprojects.com/en/1.1.x/installation/
+----------------------------- Global Virtualenv Conda envirionment ----------------------------
 
+// Virtual and global env
+#  A virtual environment is a subfolder in a project that contains a copy of a specific interpreter.
+# When you activate the virtual environment, any packages you install are installed only in that environment's subfolder. 
+# When you then run a Python program within that environment, you know that it's running against only those specific packages.
+
+# for creating virtual envirionment, visit : https://flask.palletsprojects.com/en/1.1.x/installation/
 $ python3 -m venv venv
 $ py -3 -m venv <name of the virtual envirionment>
 
@@ -28,11 +37,98 @@ $ . venv/bin/activate
 # how to switch back to global envirionment
 $deactivate    # global command
 
+# For details, refer to https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
+
+# conda env
+// A conda environment is a virtual environment that's created and managed using the conda package manager.
+// Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
+// language-agnostic: not limited to supporting only 1 type of languages.
+
 ----------------------------- QA ----------------------------
-# why there is a import resolution error?
+# why there is an import resolution error in vscode?
 it probably just means the python your editor is using is not the same interpreter that you're running when you run the server.
 # Option1: after switch back to global envirionment and install redis, the error is gone
 # Option2: in user setting, modify value of "python env file" to `${workspaceFolder}/venv` and select interpreter in ./venv/bin/python. 
 # Now the interpreter in virtual envirionment has been chosen.
  
+# what does __init__.py do?
 
+
+# what does fist line code #!/usr/bin/env python mean? 
+/usr/bin/env python3 is an instruction to set the PATH (as well as all the other NAME+VALUE pairs), and then run python3, 
+using the first directory in the PATH that contains the python3 executable.
+
+another way less flexible: #!/usr/bin/python.
+
+If you have several versions of Python installed, /usr/bin/env will ensure the interpreter used is the first one on your environment's $PATH. 
+The alternative would be to hardcode something like #!/usr/bin/python; that's ok, but less flexible.
+
+In Unix, an executable file that's meant to be interpreted can indicate what interpreter to use by having a #! at the start of the first line, 
+followed by the interpreter (and any flags it may need).
+
+In computing, a shebang (also called a hashbang, hashpling, pound bang, or crunchbang) refers to the characters "#!" 
+when they are the first two characters in an interpreter directive as the first line of a text file. In a Unix-like operating system,
+the program loader takes the presence of these two characters as an indication that the file is a script, and tries to execute that script 
+using the interpreter specified by the rest of the first line in the file.
+
+
+----------------------------- Conda ----------------------------
+# Getting started guide: https://conda.io/projects/conda/en/latest/user-guide/getting-started.html
+# Comprehensive guide: https://www.djangoproject.com/start/
+$ conda --version
+
+# Update conda to current version
+$ conda update conda
+
+// Conda allows you to create separate environments containing files, packages, and their dependencies that will not interact with other environments.
+// When you begin using conda, you already have a default environment named base. 
+// You don't want to put programs into your base environment, though. Create separate environments to keep your programs isolated from each other.
+
+# we will name the environment snowflakes and install the package BioPython.
+conda create --name( or -n for short) snowflakes biopython
+
+# to show all envs
+$conda info --envs
+$conda env list
+
+# how to view env info?
+
+# list all packages in active env
+$conda list (-n ENVNAME)
+
+# show info of a package
+$conda search <package name> --info
+
+
+----------------------------- Django ----------------------------
+// You’ve started the Django development server, a lightweight Web server written purely in Python. 
+// We’ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server – 
+// such as Apache – until you’re ready for production.
+
+// Now’s a good time to note: don’t use this server in anything resembling a production environment. 
+// It’s intended only for use while developing. (We’re in the business of making Web frameworks, not Web servers.)
+
+python -m django --version
+
+# 
+$django-admin startproject <name of site>
+
+# django migrate : https://docs.djangoproject.com/en/3.1/topics/migrations/
+
+# TO start running the server 
+$ python manage.py runserver <ip optional>:<port number optional>
+
+# Regarding python -m django, manage.py, django-admin: https://docs.djangoproject.com/en/3.1/ref/django-admin/
+
+# django-admin documentation: https://docs.djangoproject.com/en/3.1/ref/django-admin/
+
+#django project vs app:  https://stackoverflow.com/questions/19350785/what-s-the-difference-between-a-project-and-an-app-in-django-world
+// Ideally, your project should be composed by apps. That's why when using the command line, you create a project,
+// an later on, add apps to that project.
+
+// Projects vs. apps
+// What’s the difference between a project and an app? An app is a Web application that does something – e.g., a Weblog system, 
+// a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. 
+// A project can contain multiple apps. An app can be in multiple projects.
+
+# django-admin startproject name [directory] 

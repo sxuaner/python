@@ -1,0 +1,46 @@
+# this is output by issuing $env
+
+TERM_PROGRAM=vscode
+SHELL=/bin/bash
+TERM=xterm-256color
+CLICOLOR=1
+TMPDIR=/var/folders/pz/18_yfkdj5q54bt6k97m199qc0000gn/T/
+CONDA_SHLVL=2
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.5aco8yxv6n/Render
+CONDA_PROMPT_MODIFIER=(django-startproject-example) 
+TERM_PROGRAM_VERSION=1.54.1
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+JBOSS_HOME=/Users/xuansong/projects/development_tools/wildfly-11.0.0.Final
+TERM_SESSION_ID=8C6C339B-7FA0-497F-893A-B3E5FE5C40B8
+USER=xuansong
+CONDA_EXE=/Users/xuansong/.bin/miniconda3/bin/conda
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.Q0GWEEWSM9/Listeners
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+_CE_CONDA=
+CONDA_PREFIX_1=/Users/xuansong/.bin/miniconda3
+PATH=/Users/xuansong/.bin/miniconda3/envs/django-startproject-example/bin:/Users/xuansong/.bin/miniconda3/condabin:/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/git/bin:/sw/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:~/.bin:/usr/local/bin:~/.bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
+CONDA_PREFIX=/Users/xuansong/.bin/miniconda3/envs/django-startproject-example
+BLOCKSIZE=1k
+PWD=/Users/xuansong/projects/python
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
+EDITOR=/usr/local/bin/code
+LANG=en_GB.UTF-8
+XPC_FLAGS=0x0
+PS1=(django-startproject-example) ________________________________________________________________________________\n| \u:\w$(parse_git_branch)$ \n| => 
+_CE_M=
+PS2=| => 
+XPC_SERVICE_NAME=0
+SHLVL=3
+HOME=/Users/xuansong
+VSCODE_GIT_ASKPASS_MAIN=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=true
+CONDA_PYTHON_EXE=/Users/xuansong/.bin/miniconda3/bin/python
+LOGNAME=xuansong
+VSCODE_GIT_IPC_HANDLE=/var/folders/pz/18_yfkdj5q54bt6k97m199qc0000gn/T/vscode-git-e581600083.sock
+LC_CTYPE=UTF-8
+CONDA_DEFAULT_ENV=django-startproject-example
+VSCODE_GIT_ASKPASS_NODE=/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer)
+GIT_ASKPASS=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+COLORTERM=truecolor
+_=/usr/bin/env
+OLDPWD=/Users/xuansong/projects/python/django-startproject-example
