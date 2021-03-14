@@ -1,6 +1,8 @@
 # To run docker compose in current folder with docker-compose.yaml file
 $docker-compose up
 
+# Stops containers and removes containers, networks, volumes, and images created by up.
+$ docker-compose down
 # to install bash to python:alphine image, add line to dockerfile 
 RUN /bin/sh -c "apk add --no-cache bash"
 

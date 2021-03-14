@@ -3,7 +3,7 @@
 # how they link together, any volumes they might need to be mounted inside the containers.
 #  Finally, the docker-compose.yml file describes which ports these services expose. 
 
-version: "3.9"
+version: "3"
    
 services:
   db:

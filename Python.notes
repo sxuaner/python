@@ -87,6 +87,9 @@ $ conda update conda
 # we will name the environment snowflakes and install the package BioPython.
 conda create --name( or -n for short) snowflakes biopython
 
+# remove a conda env
+$ conda 
+
 # to show all envs
 $conda info --envs
 $conda env list
@@ -99,6 +102,13 @@ $conda list (-n ENVNAME)
 # show info of a package
 $conda search <package name> --info
 
+# how to install packages from a requirement file with conda?
+$ conda install --yes --file requirements.txt
+
+#or:
+while read requirement; 
+    do conda install --yes $requirement; 
+done < requirements.txt 2>error.log
 
 ----------------------------- Django ----------------------------
 // You’ve started the Django development server, a lightweight Web server written purely in Python. 
