@@ -2,7 +2,12 @@
 Commands
 // introduction or description, explanation
 # short text of what a command does
+---------------------------- Python Naming Convention ----------------------------
+
+
 ---------------------------- Python and PIP installation ----------------------------
+# how to set up python3+ env on MacOS
+It seems that MasOS has its own python installed.
 
 # to unisntall pip
 $sudo pip uninstall pip
@@ -20,7 +25,7 @@ pip install -r requirements.txt
 # to show information of currently used module from the project
 pip show flask
 
------------------------------ Global Virtualenv Conda envirionment ----------------------------
+----------------------------- Global Virtual env Conda envirionment ----------------------------
 
 // Virtual and global env
 #  A virtual environment is a subfolder in a project that contains a copy of a specific interpreter.
@@ -70,6 +75,16 @@ In computing, a shebang (also called a hashbang, hashpling, pound bang, or crunc
 when they are the first two characters in an interpreter directive as the first line of a text file. In a Unix-like operating system,
 the program loader takes the presence of these two characters as an indication that the file is a script, and tries to execute that script 
 using the interpreter specified by the rest of the first line in the file.
+
+# what does __init__.py do?
+Read  https://docs.python.org/3/tutorial/modules.html#tut-packages
+
+----------------------------- PIP ----------------------------
+# show all installed packages;
+$python3 -m pip list 
+
+# show package info
+$python3 -m pip show <package-name>
 
 
 ----------------------------- Conda ----------------------------
@@ -142,3 +157,6 @@ $ python manage.py runserver <ip optional>:<port number optional>
 // A project can contain multiple apps. An app can be in multiple projects.
 
 # django-admin startproject name [directory] 
+
+
+----------------------------- Global Virtual env Conda envirionment ----------------------------

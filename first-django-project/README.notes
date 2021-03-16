@@ -1,0 +1,7 @@
+
+# Tutorial location： https://docs.djangoproject.com/en/3.1/intro/tutorial01/
+1. Create a dir called first-django-project
+2. Cut to this dir and create an conda env
+3. Create an initial django project structure
+4. Create an app called "poll"
+5. 
