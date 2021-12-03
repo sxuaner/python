@@ -14,7 +14,13 @@ cx_Oracle.init_oracle_client(lib_dir="/Users/xuansong/.bin/instantclient_19_8")
 
 print("Client version: " + str(cx_Oracle.clientversion()))
 
-dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='ORCLCDB.localdomain')
+# cx_Oracle.makedsn(host, port, sid=None, service_name=None, region=None, sharding_key=None, super_sharding_key=None)
+# Either use server name or sid
+# Option 1:
+# dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='ORCLCDB.localdomain')
+# Option 2:
+dsn_tns = cx_Oracle.makedsn('localhost', '1521', sid='ORCLCDB')
+
 conn = cx_Oracle.connect(user=r'hr', password='hr', dsn=dsn_tns)
 
 print("Connection version:"+ conn.version)

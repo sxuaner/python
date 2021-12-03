@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # https://docs.docker.com/compose/gettingstarted/  tutorial location
 import time
 
@@ -29,3 +31,7 @@ def get_hit_count():
 def hello():
     count = get_hit_count()
     return 'Hello World! I have been seen {} times.\n'.format(count)
+
+# Add following line to run the flask sever with command $./app.py
+if __name__ == "__main__":
+    app.run()

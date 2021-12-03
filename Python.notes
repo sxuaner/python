@@ -2,56 +2,49 @@
 Commands
 // introduction or description, explanation
 # short text of what a command does
+
+---------------------------- WHY PYTHON ----------------------------
+// you could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing text data, 
+// not well-suited for GUI applications or games. You could write a C/C++/Java program, 
+// but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, Mac OS X, and Unix operating systems, 
+// and will help you get the job done more quickly.
+
 ---------------------------- Python Naming Convention ----------------------------
+https://www.python.org/dev/peps/pep-0008/
 
+Use 4-space indentation, and no tabs.
 
----------------------------- Python and PIP installation ----------------------------
-# how to set up python3+ env on MacOS
-It seems that MasOS has its own python installed.
+4 spaces are a good compromise between small indentation (allows greater nesting depth) and large indentation (easier to read). Tabs introduce confusion, and are best left out.
+Wrap lines so that they don’t exceed 79 characters.
 
-# to unisntall pip
-$sudo pip uninstall pip
+This helps users with small displays and makes it possible to have several code files side-by-side on larger displays.
+Use blank lines to separate functions and classes, and larger blocks of code inside functions.
+When possible, put comments on a line of their own.
+Use docstrings.
+Use spaces around operators and after commas, but not directly inside bracketing constructs: a = f(1, 2) + g(3, 4).
+Name your classes and functions consistently; the convention is to use UpperCamelCase for classes and lowercase_with_underscores for functions and methods. Always use self as the name for the first method argument (see A First Look at Classes for more on classes and methods).
+Don’t use fancy encodings if your code is meant to be used in international environments. Python’s default, UTF-8, or even plain ASCII work best in any case.
+Likewise, don’t use non-ASCII characters in identifiers if there is only the slightest chance people speaking a different language will read or maintain the code.
 
-# To install pip
-python<version> -m pip install <module-name>
+---------------------------- Python upgrading ----------------------------
+# update to th newest
+conda update python
 
-//redis-py can be installed using pip similar to other Python packages. Do not use sudo with pip. 
-// It is usually good to work in a virtualenv or venv to avoid conflicts with other package managers and Python projects. 
-// For a quick introduction see Python Virtual Environments in Five Minutes.
+# To install a certain version
+conda install python=3.8
 
-# to install dependencies from a file:
-pip install -r requirements.txt
-
-# to show information of currently used module from the project
-pip show flask
-
------------------------------ Global Virtual env Conda envirionment ----------------------------
-
-// Virtual and global env
-#  A virtual environment is a subfolder in a project that contains a copy of a specific interpreter.
-# When you activate the virtual environment, any packages you install are installed only in that environment's subfolder. 
-# When you then run a Python program within that environment, you know that it's running against only those specific packages.
-
-# for creating virtual envirionment, visit : https://flask.palletsprojects.com/en/1.1.x/installation/
-$ python3 -m venv venv
-$ py -3 -m venv <name of the virtual envirionment>
-
-# to activate the venv
-$ . venv/bin/activate
-
-# how to switch back to global envirionment
-$deactivate    # global command
 
 # For details, refer to https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
 
 # conda env
-// A conda environment is a virtual environment that's created and managed using the conda package manager.
-// Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
-// language-agnostic: not limited to supporting only 1 type of languages.
+A conda environment is a virtual environment that's created and managed using the conda package manager.
+Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
+language-agnostic: not limited to supporting only 1 type of languages.
 
 ----------------------------- QA ----------------------------
 # why there is an import resolution error in vscode?
 it probably just means the python your editor is using is not the same interpreter that you're running when you run the server.
+
 # Option1: after switch back to global envirionment and install redis, the error is gone
 # Option2: in user setting, modify value of "python env file" to `${workspaceFolder}/venv` and select interpreter in ./venv/bin/python. 
 # Now the interpreter in virtual envirionment has been chosen.
@@ -79,59 +72,13 @@ using the interpreter specified by the rest of the first line in the file.
 # what does __init__.py do?
 Read  https://docs.python.org/3/tutorial/modules.html#tut-packages
 
------------------------------ PIP ----------------------------
-# show all installed packages;
-$python3 -m pip list 
-
-# show package info
-$python3 -m pip show <package-name>
-
-
------------------------------ Conda ----------------------------
-# Getting started guide: https://conda.io/projects/conda/en/latest/user-guide/getting-started.html
-# Comprehensive guide: https://www.djangoproject.com/start/
-$ conda --version
-
-# Update conda to current version
-$ conda update conda
-
-// Conda allows you to create separate environments containing files, packages, and their dependencies that will not interact with other environments.
-// When you begin using conda, you already have a default environment named base. 
-// You don't want to put programs into your base environment, though. Create separate environments to keep your programs isolated from each other.
-
-# we will name the environment snowflakes and install the package BioPython.
-conda create --name( or -n for short) snowflakes biopython
-
-# remove a conda env
-$ conda 
-
-# to show all envs
-$conda info --envs
-$conda env list
-
-# how to view env info?
-
-# list all packages in active env
-$conda list (-n ENVNAME)
-
-# show info of a package
-$conda search <package name> --info
-
-# how to install packages from a requirement file with conda?
-$ conda install --yes --file requirements.txt
-
-#or:
-while read requirement; 
-    do conda install --yes $requirement; 
-done < requirements.txt 2>error.log
-
 ----------------------------- Django ----------------------------
-// You’ve started the Django development server, a lightweight Web server written purely in Python. 
-// We’ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server – 
-// such as Apache – until you’re ready for production.
+You’ve started the Django development server, a lightweight Web server written purely in Python. 
+We’ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server – 
+such as Apache – until you’re ready for production.
 
-// Now’s a good time to note: don’t use this server in anything resembling a production environment. 
-// It’s intended only for use while developing. (We’re in the business of making Web frameworks, not Web servers.)
+Now’s a good time to note: don’t use this server in anything resembling a production environment. 
+It’s intended only for use while developing. (We’re in the business of making Web frameworks, not Web servers.)
 
 python -m django --version
 
@@ -158,5 +105,9 @@ $ python manage.py runserver <ip optional>:<port number optional>
 
 # django-admin startproject name [directory] 
 
+----------------------------- Python modules ----------------------------
+https://docs.python.org/3/tutorial/modules.html#tut-searchpath
 
------------------------------ Global Virtual env Conda envirionment ----------------------------
+----------------------------- Python Strings ----------------------------
+https://docs.python.org/3/tutorial/introduction.html#3.1.2. Strings
+
