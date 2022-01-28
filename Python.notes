@@ -40,6 +40,13 @@ conda install python=3.8
 A conda environment is a virtual environment that's created and managed using the conda package manager.
 Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
 language-agnostic: not limited to supporting only 1 type of languages.
+----------------------------- conda and env management ----------------------------
+// to list all envs
+conda-env list
+
+// create a new env
+conda create --name myenv
+
 
 ----------------------------- QA ----------------------------
 # why there is an import resolution error in vscode?
@@ -111,3 +118,15 @@ https://docs.python.org/3/tutorial/modules.html#tut-searchpath
 ----------------------------- Python Strings ----------------------------
 https://docs.python.org/3/tutorial/introduction.html#3.1.2. Strings
 
+----------------------------- Python with redis ----------------------------
+
+# installing redis-py
+pip install redis
+
+----------------------------- Python Object Oriented Programming ----------------------------
+https://www.geeksforgeeks.org/python-oops-concepts/
+
+// The __init__ method 
+
+The __init__ method is similar to constructors in C++ and Java. It is run as soon as an object of a class is instantiated. The method is useful 
+to do any initialization you want to do with your object. 
