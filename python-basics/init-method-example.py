@@ -1,15 +1,16 @@
 #!/Users/xuansong/.bin/py38
 class Dog1:
     # class attribute
-    attr1 = "mammal"
+	attr1 = "mammal"
     # Instance attribute
-    def __init__(self, name):
-        self.name = name
+	def __init__(self, name, type):
+		self.name = name
+		self.type=type
   
 # Driver code
 # Object instantiation
-Rodger = Dog1("Rodger")
-Tommy = Dog1("Tommy")
+Rodger = Dog1("Rodger", None)
+Tommy = Dog1("Tommy", None)
   
 # Accessing class attributes
 print("Rodger is a {}".format(Rodger.__class__.attr1))
