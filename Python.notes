@@ -2,6 +2,9 @@
 Shebang
 #!/Users/xuansong/.bin/py38
 
+---------------------------- Python Terminology comparison with Java ----------------------------
+In java  : in Python
+package :   module
 ----------------------------- keywords ----------------------------
 !if-else
 [python]

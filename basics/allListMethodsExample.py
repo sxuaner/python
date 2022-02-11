@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/Users/xuansong/.bin/py38
+
+
 
 
 # You might have noticed that methods like insert, remove or sort that only modify the list have no return value printed – 
