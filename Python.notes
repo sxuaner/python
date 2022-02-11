@@ -204,3 +204,13 @@ Rodger = Dog1("Rodger", None)
 Tommy = Dog1("Tommy", None)
 [end]
 
+
+! User input printing
+[python]
+# How to get user input?
+import sys
+from tkinter.tix import Tree;
+
+for i in sys.argv:
+    print(i);
+[end]

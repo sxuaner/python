@@ -34,7 +34,6 @@ class TreeNode:
                     print("detecting %s" %(current_parent_leId))
                     current_parent_node.detect_loop(
                         known_nodes, single_parent_link)
-                    print()
                 else:
                     # Append this node to the end of the path, so that a loop can be checked.
                     single_parent_link.append(current_parent_leId)
@@ -42,7 +41,6 @@ class TreeNode:
         else: 
             print("This node's %s parent is None. There is no loop found on this path. Pop it and try its siblings" %(self.leId))
             single_parent_link.pop()
-
             # parent_stack.pop gets the last parent id. Retrive this node from the dict
           
 
