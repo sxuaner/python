@@ -1,3 +1,28 @@
+---------------------------- How are python scripts converted into binary code  ----------------------------
+
+
+---------------------------- Python Version in Use ----------------------------
+https://towardsdatascience.com/how-does-python-work-6f21fd197888
+
+Python is an interpreted, high-level, general-purpose programming language. It is is dynamically typed and garbage-collected.
+
+// Interpreted Languages
+When you write a program in C/C++, you have to compile it. Compilation involves translating your human understandable code to machine understandable
+code, or !Machine Code!. Machine code is the base level form of instructions that can be directly executed by the CPU. Upon successful compilation, 
+your code generates an executable file. Executing this file runs the operations in your code step by step.
+
+
+For the most part, Python is an interpreted language and not a compiled one, although compilation is a step. Python code, written in .py file is first compiled to what is called bytecode (discussed in detail further) which is stored with a .pyc or .pyo format.
+
+Instead of translating source code to machine code like C++, Python code it translated to bytecode. This bytecode is a low-level set of instructions that can be executed by an interpreter. In most PCs, Python interpreter is installed at /usr/local/bin/python3.8. Instead of executing the instructions on CPU, bytecode instructions are executed on a Virtual Machine.
+
+
+One popular advantage of interpreted languages is that they are platform-independent. As long as the Python bytecode and the Virtual Machine have the 
+same version, Python bytecode can be executed on any platform (Windows, MacOS, etc).
+
+
+---------------------------- Python GC  ----------------------------
+https://rushter.com/blog/python-garbage-collector/
 ---------------------------- Python Version in Use ----------------------------
 Shebang
 #!/Users/xuansong/.bin/py38
@@ -38,17 +63,17 @@ while a:
 # Dict
 
 # check if a value exists in an array
-
-
 ---------------------------- Formatting rules ----------------------------
 Commands
 // introduction or description, explanation
 # short text of what a command does
 
 ---------------------------- WHY PYTHON ----------------------------
-// you could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing text data, 
+// you could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing 
+// text data, 
 // not well-suited for GUI applications or games. You could write a C/C++/Java program, 
-// but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, Mac OS X, and Unix operating systems, 
+// but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, Mac OS X, and Unix
+// operating systems, 
 // and will help you get the job done more quickly.
 
 ---------------------------- Python Naming Convention ----------------------------
@@ -68,7 +93,7 @@ Name your classes and functions consistently; the convention is to use UpperCame
 Don’t use fancy encodings if your code is meant to be used in international environments. Python’s default, UTF-8, or even plain ASCII work best in any case.
 Likewise, don’t use non-ASCII characters in identifiers if there is only the slightest chance people speaking a different language will read or maintain the code.
 
----------------------------- Python upgrading ----------------------------
+---------------------------- Python upgrading using miniconda ----------------------------
 # update to th newest
 conda update python
 
@@ -83,12 +108,29 @@ A conda environment is a virtual environment that's created and managed using th
 Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
 language-agnostic: not limited to supporting only 1 type of languages.
 ----------------------------- conda and env management ----------------------------
+!What is anaconda and miniconda 
+
+// check if and what version of conda is installed
+conda --version
+
+// how to use  yaml with conda?
+conda create env --file envirionment.yml
+
+// sample yml file:
+[yaml]
+[end]
+
+// where exactly are packages installed on the file system? How to find this out
+
+// install a packge in current env
+conda install <package-name>
+pip install <package-name>
 // to list all envs
 conda-env list
+conda env list
 
 // create a new env
 conda create --name myenv
-
 
 ----------------------------- QA ----------------------------
 # why there is an import resolution error in vscode?
@@ -99,7 +141,6 @@ it probably just means the python your editor is using is not the same interpret
 # Now the interpreter in virtual envirionment has been chosen.
  
 # what does __init__.py do?
-
 
 # what does fist line code #!/usr/bin/env python mean? 
 /usr/bin/env python3 is an instruction to set the PATH (as well as all the other NAME+VALUE pairs), and then run python3, 
@@ -120,6 +161,11 @@ using the interpreter specified by the rest of the first line in the file.
 
 # what does __init__.py do?
 Read  https://docs.python.org/3/tutorial/modules.html#tut-packages
+
+# vscode imports cannot be imported 
+Cmd + shift + p -> choose python interpreter
+
+
 
 ----------------------------- Django ----------------------------
 You’ve started the Django development server, a lightweight Web server written purely in Python. 
@@ -217,3 +263,82 @@ from tkinter.tix import Tree;
 for i in sys.argv:
     print(i);
 [end]
+
+---------------------------- Python testing ----------------------------
+// Alpha testing 
+Is unit testing Alpha testing?
+Alpha Testing is a type of software testing performed to identify bugs before releasing the product to real users or to the public. Alpha Testing is 
+one of the user acceptance testing.
+
+Alpha testing is the initial phase of validating whether a new product will perform as expected. Alpha tests are carried out early in the development 
+process by internal staff and are followed up with beta tests, in which a sampling of the intended audience actually tries the product out.
+
+// User Acceptance testing
+User Acceptance Testing (UAT), which is performed on most UIT projects, sometimes called beta testing or end-user testing, is a phase of software 
+development in which the software is tested in the "real world" by the intended audience or business representative.
+
+// Is Alpha testing and UAT same?
+Image result for is unit test alpha testing
+Alpha occurs after all features are developed, have been tested through the Development/QA organizations, and have been signed off by the Product 
+Owner (via UAT). Alpha Testing phases typically run 1-2 weeks, but this varies widely based on the size and complexity of the release.
+
+// pytest
+unit testing 
+
+
+
+// Mock
+https://realpython.com/python-mock-library/
+
+---------------------------- pytest ----------------------------
+pytest will run all files of the form test_*.py or *_test.py in the current directory and its subdirectories. More generally, it follows 
+!standard test discovery rules!. //https://docs.pytest.org/en/6.2.x/goodpractices.html#test-discovery
+
+
+---------------------------- Python Grammar ----------------------------
+[python]
+# file handling
+# 1) without using with statement
+file = open('file_path', 'w')
+file.write('hello world !')
+file.close()
+  
+# 2) without using with statement
+file = open('file_path', 'w')
+try:
+    file.write('hello world')
+finally:
+    file.close()
+
+
+# using with statement
+with open('file_path', 'w') as file:
+    file.write('hello world !')
+
+# The following code:
+with EXPRESSION as TARGET:
+    SUITE
+# is semantically equivalent to:
+
+manager = (EXPRESSION)
+enter = type(manager).__enter__
+exit = type(manager).__exit__
+value = enter(manager)
+hit_except = False
+
+try:
+    TARGET = value
+    SUITE
+except:
+    hit_except = True
+    if not exit(manager, *sys.exc_info()):
+        raise
+finally:
+    if not hit_except:
+        exit(manager, None, None, None)
+
+[end]
+
+with statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common 
+resources like file streams. Observe the following code example on how the use of with statement makes code cleaner.
+
