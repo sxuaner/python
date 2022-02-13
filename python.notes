@@ -342,3 +342,18 @@ finally:
 with statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common 
 resources like file streams. Observe the following code example on how the use of with statement makes code cleaner.
 
+
+// difference between import and from... import?
+import imports the whole library. from import imports a specific member or members of 
+the library.
+
+// To instantiate a class
+thing = ProductionClass()
+
+// How to define a method with arbitrary amount of arguements
+In Python, by adding * and ** (one or two asterisks) to the head of parameter names in the function definition, you can specify an arbitrary number 
+of arguments (variable-length arguments) when calling the function
+[python]
+  def method(self, *value):
+        return 4
+[end]
