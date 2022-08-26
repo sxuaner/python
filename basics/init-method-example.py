@@ -13,6 +13,7 @@ Rodger = Dog1("Rodger", None)
 Tommy = Dog1("Tommy", None)
   
 # Accessing class attributes
+# What is __class__ variable?
 print("Rodger is a {}".format(Rodger.__class__.attr1))
 print("Tommy is also a {}".format(Tommy.__class__.attr1))
   

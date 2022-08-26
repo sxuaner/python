@@ -42,9 +42,6 @@ class TreeNode:
             print("This node's %s parent is None. There is no loop found on this path. Pop it and try its siblings" %(self.leId))
             single_parent_link.pop()
             # parent_stack.pop gets the last parent id. Retrive this node from the dict
-          
-
-
 # test
 # With detect_loop(), I should know whether there is a loop among the parents
 if __name__ == "__main__":

@@ -1,3 +1,6 @@
+---------------------------- Python Env setup for beginners ----------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos
+
 ---------------------------- How are python scripts converted into binary code  ----------------------------
 
 
@@ -64,7 +67,7 @@ while a:
 
 # check if a value exists in an array
 ---------------------------- Formatting rules ----------------------------
-Commands
+// Commands
 // introduction or description, explanation
 # short text of what a command does
 
@@ -92,45 +95,6 @@ Use spaces around operators and after commas, but not directly inside bracketing
 Name your classes and functions consistently; the convention is to use UpperCamelCase for classes and lowercase_with_underscores for functions and methods. Always use self as the name for the first method argument (see A First Look at Classes for more on classes and methods).
 Don’t use fancy encodings if your code is meant to be used in international environments. Python’s default, UTF-8, or even plain ASCII work best in any case.
 Likewise, don’t use non-ASCII characters in identifiers if there is only the slightest chance people speaking a different language will read or maintain the code.
-
----------------------------- Python upgrading using miniconda ----------------------------
-# update to th newest
-conda update python
-
-# To install a certain version
-conda install python=3.8
-
-
-# For details, refer to https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
-
-# conda env
-A conda environment is a virtual environment that's created and managed using the conda package manager.
-Conda is an open-source, cross-platform, language-agnostic package manager and environment management system
-language-agnostic: not limited to supporting only 1 type of languages.
------------------------------ conda and env management ----------------------------
-!What is anaconda and miniconda 
-
-// check if and what version of conda is installed
-conda --version
-
-// how to use  yaml with conda?
-conda create env --file envirionment.yml
-
-// sample yml file:
-[yaml]
-[end]
-
-// where exactly are packages installed on the file system? How to find this out
-
-// install a packge in current env
-conda install <package-name>
-pip install <package-name>
-// to list all envs
-conda-env list
-conda env list
-
-// create a new env
-conda create --name myenv
 
 ----------------------------- QA ----------------------------
 # why there is an import resolution error in vscode?
@@ -164,8 +128,6 @@ Read  https://docs.python.org/3/tutorial/modules.html#tut-packages
 
 # vscode imports cannot be imported 
 Cmd + shift + p -> choose python interpreter
-
-
 
 ----------------------------- Django ----------------------------
 You’ve started the Django development server, a lightweight Web server written purely in Python. 
